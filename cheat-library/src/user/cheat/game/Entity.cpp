@@ -205,6 +205,18 @@ namespace cheat::game
 		SAFE_END();
 	}
 
+	app::Animator* Entity::animator()
+	{
+		if (!isLoaded())
+			return nullptr;
+
+		SAFE_BEGIN();
+		return app::MoleMole_BaseEntity_get_animator(m_RawEntity, nullptr);
+		SAFE_ERROR();
+		return nullptr;
+		SAFE_END();
+	}
+
 	app::GameObject* Entity::gameObject()
 	{
 		if (!isLoaded())
@@ -217,7 +229,7 @@ namespace cheat::game
 		SAFE_END();
 	}
 
-	app::Vector3 Entity::forward()
+	app::Vector3 Entity::forward() const
 	{
 		if (m_RawEntity == nullptr)
 			return {};
@@ -225,12 +237,12 @@ namespace cheat::game
 		return app::MoleMole_BaseEntity_GetForward(m_RawEntity, nullptr);
 	}
 
-	app::Vector3 Entity::back()
+	app::Vector3 Entity::back() const
 	{
 		return -forward();
 	}
 
-	app::Vector3 Entity::right()
+	app::Vector3 Entity::right() const
 	{
 		if (m_RawEntity == nullptr)
 			return {};
@@ -238,12 +250,12 @@ namespace cheat::game
 		return app::MoleMole_BaseEntity_GetRight(m_RawEntity, nullptr);
 	}
 
-	app::Vector3 Entity::left()
+	app::Vector3 Entity::left() const
 	{
 		return -right();
 	}
 
-	app::Vector3 Entity::up()
+	app::Vector3 Entity::up() const
 	{
 		if (m_RawEntity == nullptr)
 			return {};
@@ -251,7 +263,7 @@ namespace cheat::game
 		return app::MoleMole_BaseEntity_GetUp(m_RawEntity, nullptr);
 	}
 
-	app::Vector3 Entity::down()
+	app::Vector3 Entity::down() const
 	{
 		return -up();
 	}

@@ -37,13 +37,14 @@ namespace cheat::game
 
 		app::GameObject* gameObject();
 		app::Rigidbody* rigidbody();
-		
-		app::Vector3 forward();
-		app::Vector3 back();
-		app::Vector3 right();
-		app::Vector3 left();
-		app::Vector3 up();
-		app::Vector3 down();
+		app::Animator* animator();
+
+		app::Vector3 forward() const;
+		app::Vector3 back() const;
+		app::Vector3 right() const;
+		app::Vector3 left() const;
+		app::Vector3 up() const;
+		app::Vector3 down() const;
 
 		template<class T>
 		T* plugin(void* pClass)

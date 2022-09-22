@@ -10,6 +10,7 @@
 #include <cheat/misc/ProtectionBypass.h>
 #include <cheat/misc/Hotkeys.h>
 #include <cheat/misc/Debug.h>
+#include <cheat/misc/About.h>
 #include <cheat/misc/sniffer/PacketSniffer.h>
 
 #include <cheat/player/GodMode.h>
@@ -22,6 +23,7 @@
 #include <cheat/world/AutoLoot.h>
 #include <cheat/world/DialogSkip.h>
 #include <cheat/world/DumbEnemies.h>
+#include <cheat/world/FreezeEnemies.h>
 #include <cheat/world/ElementalSight.h>
 #include <cheat/world/KillAura.h>
 #include <cheat/world/MobVacuum.h>
@@ -30,6 +32,7 @@
 #include <cheat/world/FakeTime.h>
 #include <cheat/world/AutoSeelie.h>
 #include <cheat/world/VacuumLoot.h>
+#include <cheat/world/GameSpeed.h>
 
 #include <cheat/teleport/ChestTeleport.h>
 #include <cheat/teleport/MapTeleport.h>
@@ -41,6 +44,9 @@
 
 #include <cheat/world/AutoFish.h>
 #include <cheat/world/AutoCook.h>
+#include <cheat/world/AutoChallenge.h>
+#include <cheat/world/CustomWeather.h>
+#include <cheat/world/OpenTeamImmediately.h>
 
 #include <cheat/visuals/NoFog.h>
 #include <cheat/visuals/FPSUnlock.h>
@@ -50,9 +56,11 @@
 #include <cheat/visuals/PaimonFollow.h>
 #include <cheat/visuals/HideUI.h>
 #include <cheat/visuals/Browser.h>
-#include <cheat/visuals/EnablePeaking.h>
+#include <cheat/visuals/EnablePeeking.h>
 #include <cheat/visuals/TextureChanger.h>
 #include <cheat/visuals/FreeCamera.h>
+#include <cheat/visuals/AnimationChanger.h>
+#include <cheat/player/FallControl.h>
 
 #include "GenshinCM.h"
 
@@ -75,6 +83,7 @@ namespace cheat
 			FEAT_INST(Settings),
 			FEAT_INST(Hotkeys),
 			FEAT_INST(Debug),
+			FEAT_INST(About),
 			FEAT_INST(PacketSniffer),
 
 			FEAT_INST(GodMode),
@@ -83,18 +92,23 @@ namespace cheat
 			FEAT_INST(NoClip),
 			FEAT_INST(RapidFire),
 			FEAT_INST(AutoRun),
+			FEAT_INST(FallControl),
 
 			FEAT_INST(AutoLoot),
 			FEAT_INST(AutoTreeFarm),
 			FEAT_INST(AutoDestroy),
 			FEAT_INST(AutoSeelie),
+			FEAT_INST(OpenTeamImmediately),
 			FEAT_INST(VacuumLoot),
 			FEAT_INST(DialogSkip),
 			FEAT_INST(DumbEnemies),
+			FEAT_INST(FreezeEnemies),
 			FEAT_INST(ElementalSight),
 			FEAT_INST(KillAura),
+			FEAT_INST(AutoChallenge),
 			FEAT_INST(MobVacuum),
 			FEAT_INST(FakeTime),
+			FEAT_INST(GameSpeed),
 
 			FEAT_INST(ChestTeleport),
 			FEAT_INST(OculiTeleport),
@@ -107,6 +121,8 @@ namespace cheat
 			FEAT_INST(AutoFish),
 			FEAT_INST(AutoCook),
 
+			FEAT_INST(CustomWeather),
+
 			FEAT_INST(NoFog),
 			FEAT_INST(FPSUnlock),
 			FEAT_INST(CameraZoom),
@@ -115,9 +131,10 @@ namespace cheat
 			FEAT_INST(PaimonFollow),
 			FEAT_INST(HideUI),
 			FEAT_INST(Browser),
-			FEAT_INST(EnablePeaking),
+			FEAT_INST(EnablePeeking),
 			FEAT_INST(TextureChanger),
-			FEAT_INST(FreeCamera)
+			FEAT_INST(FreeCamera),
+			FEAT_INST(AnimationChanger)
 			
 			});
 #undef FEAT_INST
@@ -130,6 +147,7 @@ namespace cheat
 			"Visuals",
 			"Hotkeys",
 			"Settings",
+			"About",
 			"Debug"
 			});
 
